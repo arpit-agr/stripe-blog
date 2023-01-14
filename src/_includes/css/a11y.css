@@ -1,0 +1,28 @@
+:focus {
+  outline-style: solid;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+.skip-to-main {
+  display: block;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  transform: translateY(-100%);
+  transition: transform 0.15s ease;
+  z-index: 999;
+}
+
+.skip-to-main:focus {
+  opacity: 1;
+  outline: 0;
+  transform: translate(0);
+}

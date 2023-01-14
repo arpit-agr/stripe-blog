@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- if js is available add class -->
+  <script>document.documentElement.classList.add('has-js');</script>
+  <!-- css -->
+  {%- include "css/styles.njk" -%}
+  <!-- preload scripts and fonts -->
+  <!-- named block to inject elements from layout files -->
+  {%- block injectHead -%}{%- endblock -%}
+  <!-- meta information -->
+  {%- include "partials/meta.html" -%}
+</head>
+<body>
+  <a href="#main" class="skip-to-main">Skip to content</a>
+  <header class="site-head"></header>
+  <main id="main" tabindex="-1">
+    {%- block content -%}
+      This page is under maintenance.
+    {%- endblock -%}
+  </main>
+  <footer role="contentinfo"></footer>
+  {%- block bodyScripts -%}{%- endblock -%}
+</body>
+</html>
