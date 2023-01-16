@@ -1,0 +1,132 @@
+article {
+	position: relative;
+	padding-block: var(--space-xl) var(--space-2xl-3xl);
+}
+
+.blog-post .hero {
+	display: grid;
+	/* shorthand: https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid */
+	/* grid: auto / repeat(var(--columnCountMax), 1fr); */
+	grid-template-rows: auto;
+	grid-template-columns: repeat(var(--columnCountMax), 1fr);
+	position: relative;
+	z-index: 1;
+
+	/* align-items: start;
+	inline-size: 100%;
+	max-inline-size: var(--layoutWidth); */
+}
+
+.blog-post .hero > * {
+	padding-inline: var(--columnPadding);
+}
+
+.blog-post .title {
+	grid-column: 1/-1;
+}
+
+.blog-post .meta {
+	/* display: flex; */
+	grid-column: 1/-1;
+	margin-block: var(--space-m-l) var(--space-l-xl);
+}
+
+@media (min-width: 900px) {
+	.blog-post .title {
+		/* Shorthand for grid-column-start + grid-column-end */
+		/* https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid-columngrid-row */
+		/* grid-column: 2 / span 3; */
+		grid-column: 2/-1;
+	}
+
+	.blog-post .meta {
+		grid-column: 2;
+	}
+}
+
+.blog-post .date {
+	display: inline-block;
+	position: relative;
+}
+
+.blog-post .date:before {
+	content: "";
+	display: var(--anchorDisplay, block);
+	position: absolute;
+	inset-block-start: calc(0.5px + var(--line-height) * 1em / 2 - 1em / 2);
+	inset-inline-start: calc(var(--columnPadding) * -1);
+	inline-size: 1px;
+	block-size: 1em;
+	background-color: var(--accentColor);
+}
+
+.blog-post .author-list {
+	grid-column: 1/-1;
+	display: grid;
+	/* gap: 16px 0; */
+	margin-block-end: var(--space-m-l);
+}
+
+@media (min-width: 900px) {
+	.blog-post .author-list {
+		grid-column: 1;
+		position: relative;
+		inset-block-start: 1px;
+		block-size: 0;
+		margin-block-end: 0;
+	}
+}
+
+.blog-post .author {
+	--cluster-gap: 0.5em;
+	--cluster-vertical-alignment: center;
+}
+
+.blog-post .author-caption {
+	--stack-gap: 0;
+}
+
+.blog-post .author-link {
+	color: var(--textColor);
+}
+
+.blog-post .body {
+	display: grid;
+	grid-column: 1/-1;
+
+	/* shorthand: https://css-tricks.com/snippets/css/complete-guide-grid/#aa-grid */
+	/* grid: auto / repeat(var(--columnCountMax), 1fr); */
+	grid-template-rows: auto;
+	grid-template-columns: repeat(var(--columnCountMax), 1fr);
+
+	align-items: start;
+	/* gap: var(--space-m) 0;
+	inline-size: 100%;
+	max-inline-size: var(--layoutWidth); */
+
+	hyphens: auto;
+}
+
+.blog-post .body > * {
+	grid-column: 1/-1;
+	padding-inline: var(--columnPadding);
+}
+
+@media (min-width: 900px) {
+	.blog-post .body > * {
+		grid-column: 2/-1;
+	}
+}
+
+.blog-post .body img {
+	inline-size: calc(100% + (2 * var(--columnPadding)));
+	margin-inline-start: calc(-1 * var(--columnPadding));
+	max-inline-size: var(--layoutWidth);
+	border-radius: var(--space-2xs);
+}
+
+.blog-post .body pre,
+.blog-post .body blockquote,
+.blog-post .body img {
+	margin-block: var(--space-l-xl);
+}

@@ -1,0 +1,19 @@
+<header class="hero">
+  <h1 class="title">{{ title }}</h1>
+  <div class="meta">
+    <time class="date step--1" datetime="{{ date | dump }}">
+      {{ date | postDate }}
+    </time>
+  </div>
+  <div class="author-list">
+    <figure class="author cluster step--1">
+      <a href="#">
+        <img class="author-avatar" width="48" height="48" src="{{ author.img | safe }}">
+      </a>
+      <figcaption class="author-caption stack">
+        <a class="author-link" href="#">{{ author.name }}</a>
+        <span class="author-role">{{ author.role }}</span>
+      </figcaption>
+    </figure>
+  </div>
+</header>

@@ -5,3 +5,27 @@
 .wrapper {
 	max-inline-size: var(--layoutWidth);
 }
+
+:where(.cluster) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--cluster-gap, 1em);
+	justify-content: var(--cluster-horizontal-alignment, flex-start);
+	align-items: var(--cluster-vertical-alignment, center);
+}
+
+:where(.stack) {
+	display: flex;
+	flex-direction: column;
+	gap: var(--stack-gap, 1em);
+	justify-content: var(--stack-vertical-alignment, flex-start);
+	align-items: var(--stack-horizontal-alignment, flex-start);
+}
+
+.step--1 {
+	font-size: var(--step--1);
+}
+
+.fw500 {
+	font-weight: 500;
+}

@@ -1,0 +1,39 @@
+.site-head {
+	position: relative;
+}
+
+.site-head:after {
+	content: "";
+	position: absolute;
+	inset-block-end: 0;
+	inset-inline-start: 0;
+	inline-size: 100%;
+	block-size: 1px;
+	/* margin: 0; */
+	border: none;
+	background: linear-gradient(
+		90deg,
+		var(--guideDashedColor),
+		var(--guideDashedColor) 50%,
+		transparent 0,
+		transparent
+	);
+	background-size: var(--space-2xs) 1px;
+}
+
+.nav-container {
+	--cluster-horizontal-alignment: space-between;
+	padding: var(--columnPadding);
+}
+
+.primary-nav {
+	--cluster-gap: var(--space-l);
+}
+
+.primary-nav a {
+	color: inherit;
+}
+
+.nav-container .cta-button[data-variant="button"] {
+	background-color: var(--navColor);
+}

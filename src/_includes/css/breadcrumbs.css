@@ -1,0 +1,22 @@
+.breadcrumbs {
+	position: relative;
+}
+
+.breadcrumbs ol {
+	--cluster-gap: 0.5em;
+}
+
+:where(.breadcrumbs) li + li:before {
+	content: "/";
+	color: #c2ccd9;
+	/* position: relative; */
+	margin-inline-end: 0.5em;
+}
+
+/* .breadcrumbs a {
+	color: var(--accentColor);
+}
+
+.breadcrumbs a:where(:hover, :focus) {
+	color: var(--linkHoverColor);
+} */

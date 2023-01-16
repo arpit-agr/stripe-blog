@@ -2,38 +2,38 @@ section {
 	position: relative;
 }
 
-.Section__masked {
+.section-masked {
 	overflow: hidden;
 }
 
-.Section__container {
+.section-container {
 	display: flex;
 	justify-content: center;
 }
 
-.Section__layoutContainer {
+.section-layout-container {
 	inline-size: 100%;
 	margin-inline: var(--gutter);
 }
 
-.Section__layout {
+.section-layout {
 	padding-block: var(--sectionBlockPadding);
 }
 
-.ColumnLayout {
+.column-layout {
 	display: grid;
 	row-gap: var(--space-xl);
 	align-items: flex-start;
 }
 
-.Section__backgroundMask {
+.section-background-mask {
 	position: absolute;
 	inset: 0;
 	overflow: visible;
 	pointer-events: none;
 }
 
-.Section__background {
+.section-background {
 	position: relative;
 	inline-size: 100%;
 	block-size: 100%;
@@ -42,18 +42,17 @@ section {
 	inset-inline-start: 0;
 	transform-origin: 100% 0;
 	transform: skewY(0);
-	background: var(--backgroundColor);
 	overflow: hidden;
 }
 
-.Guides {
+.guides {
 	position: absolute;
 	inset: 0;
 	padding: 0 var(--gutter);
 	pointer-events: none;
 }
 
-.Guides__container {
+.guides-container {
 	display: grid;
 	grid: 1fr / repeat(var(--columnCountMax), 1fr);
 	position: relative;
@@ -61,7 +60,7 @@ section {
 	margin-inline: auto;
 }
 
-.Guides__guide {
+.guide-item {
 	inline-size: 1px;
 	background: linear-gradient(
 		180deg,
@@ -73,14 +72,40 @@ section {
 	background-size: 1px var(--space-2xs);
 }
 
-.Guides__guide:first-of-type,
-.Guides__guide:last-of-type {
+.guide-item:first-of-type,
+.guide-item:last-of-type {
 	background: var(--guideSolidColor);
 }
 
-.Guides__guide:last-of-type {
+.guide-item:last-of-type {
 	position: absolute;
 	inset-block-start: 0;
 	inset-inline-end: 0;
 	block-size: 100%;
+}
+
+@media (min-width: 600px) {
+	:root {
+		--columnCountMax: 2;
+	}
+
+	[data-columns="2,1,1"] {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+	[data-columns="2,1,1"] > :first-child {
+		grid-column: span 2;
+	}
+}
+
+@media (min-width: 900px) {
+	:root {
+		--columnCountMax: 4;
+	}
+
+	[data-columns="2,1,1"] {
+		grid-template-columns: 2fr repeat(2, 1fr);
+	}
 }

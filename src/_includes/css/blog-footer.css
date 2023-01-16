@@ -1,0 +1,77 @@
+.blog-footer .section-background {
+	background: var(--backgroundColor);
+}
+
+.copy {
+	padding-inline: var(--columnPadding);
+}
+
+.copy {
+	--headerMaxWidth: var(--copyMaxWidth);
+	--bodyMaxWidth: var(--copyMaxWidth);
+}
+
+.copy[data-variant="with-footer"] {
+	--titleFontSize: var(--step-3);
+	--titleLineHeight: 1.333333333;
+	--titleLetterSpacing: 0.1px;
+}
+
+.copy[data-variant="with-detail"] {
+	--titleBorderColor: var(--accentColor);
+	--bodyFontSize: var(--step--1);
+	--titleFontSize: var(--step-0);
+	--titleLineHeight: 1.333333333;
+	--titleLetterSpacing: 0.2px;
+}
+
+.copy .header {
+	--flow-space: var(--space-xs);
+	position: relative;
+	max-inline-size: var(--headerMaxWidth);
+}
+
+.copy .icon-container {
+	min-height: 40px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.copy .icon {
+	display: block;
+}
+
+.copy .title {
+	position: relative;
+	font-size: var(--titleFontSize);
+	letter-spacing: var(--titleLetterSpacing, inherit);
+	line-height: var(--titleLineHeight);
+}
+
+.copy .title:before {
+	content: "";
+	display: var(--titleAnchorDisplay, block);
+	position: absolute;
+	inset-block-start: calc(
+		0.5px + var(--titleLineHeight) * var(--titleFontSize) / 2 -
+			var(--titleFontSize) / 2
+	);
+	inset-inline-start: calc(var(--columnPadding) * -1);
+	inline-size: 1px;
+	block-size: var(--titleFontSize);
+	background-color: var(--titleBorderColor, transparent);
+}
+
+.copy .body {
+	max-inline-size: var(--bodyMaxWidth);
+	font-size: var(--bodyFontSize);
+}
+
+.copy[data-variant="with-footer"] .body {
+	/* 		padding-inline-end: var(--space-2xl-3xl); */
+	max-inline-size: 34ch;
+}
+
+.copy .footer {
+	--flow-space: var(--bodyFontSize);
+}

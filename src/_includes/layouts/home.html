@@ -1,6 +1,20 @@
 {%- extends "layouts/base.html" -%}
 
+{%- block preContent -%}
+  {%- include "partials/breadcrumbs.html" -%}
+{%- endblock -%}
+
 {%- block content -%}
-  {{ content | safe }}
-  {%- include "partials/blog-footer-cta.html" -%}
+  <article class="blog-post section-container">
+    {%- include "partials/background-mask.html" -%}
+    <div class="section-layout-container wrapper">
+      {%- include "partials/article-header.html" -%}
+      <section class="body">
+        <div class="flow">
+          {{ content | safe }}
+        </div>
+      </section>
+    </div>
+  </article>
+  {%- include "partials/blog-footer.html" -%}
 {%- endblock -%}
