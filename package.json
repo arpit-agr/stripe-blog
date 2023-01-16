@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/arpit-agr/11ty-starter#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.2"
+    "@11ty/eleventy": "^2.0.0-canary.30"
   },
   "dependencies": {
     "@11ty/eleventy-plugin-directory-output": "^1.0.1",
