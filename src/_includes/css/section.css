@@ -1,0 +1,86 @@
+section {
+	position: relative;
+}
+
+.Section__masked {
+	overflow: hidden;
+}
+
+.Section__container {
+	display: flex;
+	justify-content: center;
+}
+
+.Section__layoutContainer {
+	inline-size: 100%;
+	margin-inline: var(--gutter);
+}
+
+.Section__layout {
+	padding-block: var(--sectionBlockPadding);
+}
+
+.ColumnLayout {
+	display: grid;
+	row-gap: var(--space-xl);
+	align-items: flex-start;
+}
+
+.Section__backgroundMask {
+	position: absolute;
+	inset: 0;
+	overflow: visible;
+	pointer-events: none;
+}
+
+.Section__background {
+	position: relative;
+	inline-size: 100%;
+	block-size: 100%;
+	max-block-size: none;
+	inset-block-start: 0;
+	inset-inline-start: 0;
+	transform-origin: 100% 0;
+	transform: skewY(0);
+	background: var(--backgroundColor);
+	overflow: hidden;
+}
+
+.Guides {
+	position: absolute;
+	inset: 0;
+	padding: 0 var(--gutter);
+	pointer-events: none;
+}
+
+.Guides__container {
+	display: grid;
+	grid: 1fr / repeat(var(--columnCountMax), 1fr);
+	position: relative;
+	block-size: 100%;
+	margin-inline: auto;
+}
+
+.Guides__guide {
+	inline-size: 1px;
+	background: linear-gradient(
+		180deg,
+		var(--guideDashedColor),
+		var(--guideDashedColor) 50%,
+		transparent 0,
+		transparent
+	);
+	background-size: 1px var(--space-2xs);
+}
+
+.Guides__guide:first-of-type,
+.Guides__guide:last-of-type {
+	background: var(--guideSolidColor);
+}
+
+.Guides__guide:last-of-type {
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-end: 0;
+	block-size: 100%;
+}

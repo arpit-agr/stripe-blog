@@ -1,0 +1,68 @@
+:root {
+	--gutter: var(--space-s);
+	--layoutWidthMax: 1080px;
+	--layoutWidth: min(var(--layoutWidthMax), calc(100vw - var(--gutter) * 2));
+	--columnMaxWidth: calc(var(--layoutWidthMax) * 0.25);
+	--copyMaxWidth: calc(var(--columnMaxWidth) * 3);
+
+	--sectionBlockPadding: var(--space-2xl-3xl);
+	--columnPadding: var(--space-s);
+	--columnCountMax: 1;
+
+	--titleColor: #0a2540;
+	--textColor: #425466;
+	--accentColor: #635bff;
+	--linkHoverColor: #0a2540;
+	--buttonColor: var(--accentColor);
+	--buttonHoverColor: #0a2540;
+	--knockoutColor: #fff;
+	--backgroundColor: hsl(210deg 50% 98%);
+	--guideSolidColor: rgba(66, 71, 112, 0.06);
+	--guideDashedColor: rgba(66, 71, 112, 0.09);
+	--blendBackground: #80e9ff;
+	--blendForeground: #7a73ff;
+	--blendIntersection: #0048e5;
+
+	--fontWeightNormal: 400;
+	--fontWeightSemibold: 500;
+	--fontWeightBold: 600;
+
+	--hoverTransition: 150ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+body {
+	color: var(--textColor);
+	font-family: system-ui;
+	font-size: var(--step-0);
+	/* 		letter-spacing: 0.2px; */
+}
+
+h1,
+h2,
+h3 {
+	color: var(--titleColor);
+}
+
+h1 {
+	font-size: var(--step-2);
+	font-weight: var(--fontWeightBold);
+}
+
+h2 {
+	font-size: var(--step--1);
+	font-weight: var(--fontWeightSemibold);
+}
+
+a {
+	text-decoration: none;
+}
+
+:focus {
+	box-shadow: 0 0 0 2px hsl(217deg 99% 65%),
+		inset 0 0 0 2px hsl(0deg 0% 100% / 90%);
+}
+
+:focus:not(:focus-visible) {
+	outline: none;
+	box-shadow: none;
+}
