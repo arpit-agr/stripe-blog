@@ -97,6 +97,11 @@ pre {
 	overflow-x: auto;
 }
 
+code {
+	font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas,
+		"Liberation Mono", "Courier New", monospace;
+}
+
 blockquote {
 	display: grid;
 	/* grid: auto/auto auto; */
